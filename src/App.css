@@ -2,48 +2,50 @@
 
 .app {
   width: auto;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #282c34;
   text-align: center;
-  color: white; /* Set text color to white for better visibility */
+  color: white;
 }
 
 .app-navbar {
   display: flex;
-  justify-content: space-between; /* Align to the left and space other elements evenly */
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #333;
-  padding: 10px 20px; /* Add some padding for better appearance */
+  padding: 10px 20px;
 }
 
 .app-navbar ul {
   list-style: none;
   display: flex;
-  align-items: center; /* Vertically center the items */
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0; /* Remove default margin */
+}
+
+.app-navbar li {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .app-navbar a {
   text-decoration: none;
   color: white;
   padding: 10px;
-}
-
-.app-header {
-  padding: 20px;
-}
-
-.app-main {
-  padding: 20px;
-}
-
-.app-skills {
-  margin-top: 20px;
-}
-
-.app-footer {
-  margin-top: 20px;
+  display: block; /* Ensure full width for the anchor tags */
 }
 
 #NavbarName {
   font-size: 24px;
-  padding-right: 10vw;
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+.app-header,
+.app-main,
+.app-skills,
+.app-footer {
+  padding: 20px;
 }
