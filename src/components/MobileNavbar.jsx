@@ -1,6 +1,7 @@
 // MobileNavbar.js
 
-import React from 'react';
+import { is } from '@babel/types';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function MobileNavbar() {
@@ -13,11 +14,28 @@ function MobileNavbar() {
     { to: '/web-development', label: 'Web Development' },
   ];
 
+  // State to manage the visibility of the dropdown content
+  const [isDropdownOpen, setDropdownOpen] = useState('none');
+
+  // Function to toggle the dropdown content
+  const toggleDropdown = () => {
+    if (isDropdownOpen === 'none'){
+    setDropdownOpen('block')}
+    else {
+      setDropdownOpen('none')
+    }
+  };
+
+  // Function to close the dropdown content
+  const closeDropdown = () => {
+    setDropdownOpen(false);
+  };
+
   return (
     <nav className="mobile-navbar">
-      <div className="dropdown">
+      <div className="dropdown" onClick={toggleDropdown} >
         <button className="dropbtn">≡</button>
-        <div className="dropdown-content">
+        <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`} onClick={closeDropdown} style={{display:`${isDropdownOpen}`}}>
           <ul>
             {mobileNavLinks.map((link, index) => (
               <li key={index}>

@@ -71,15 +71,24 @@
   position: absolute;
   top: 0px;
   right: 10px;
+  z-index: 100;
 }
 
 .mobile-navbar .dropdown-content {
   display: none;
   position: absolute;
+  top: 10;
+  left: 0;
+  width: 100vw;
   background-color: #333;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
+
+.mobile-navbar .dropdown-content.show {
+  display: block;
+}
+
 
 .mobile-navbar .dropdown-content ul {
   list-style: none;
