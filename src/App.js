@@ -1,16 +1,16 @@
-// Import necessary modules from React
+// App.js
+
 import React from 'react';
-import { BrowserRouter as Router, Route,Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
 import './App.css'; // Import your CSS file for styling
+import MobileNavbar from './components/MobileNavbar'; // Import your MobileNavbar component
 import Cpp from './components/Cpp';
 import MachineLearning from './components/MachineLearning';
 import Blockchain from './components/Blockchain';
 import WebDevelopment from './components/WebDevelopment';
 import About from './components/About';
 
-// Functional component representing your App
 function App() {
-  // Define your personal information
   const name = 'Kerem Bayramoğlu';
 
   return (
@@ -29,10 +29,11 @@ function App() {
           </ul>
         </nav>
 
+        {/* Mobile Navbar component (styled with media query) */}
+        <MobileNavbar />
+
         {/* Main content section */}
         <main className="app-main">
-
-
           {/* React Router Routes */}
           <Routes>
             <Route path="/" element={<About />} />
